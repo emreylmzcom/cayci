@@ -3,119 +3,256 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Çaycı Discord Botu</title>
+    <title>Discord Bot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="logo.png" alt="Çaycı Logo">
-            <h1>Çaycı Discord Botu</h1>
-        </div>
-        <nav>
-            <a href="#about">Hakkında</a>
-            <a href="#features">Özellikler</a>
-            <a href="#commands">Komutlar</a>
-            <a href="#invite">Davet Et</a>
-            <a href="#contact">İletişim</a>
-        </nav>
+    <header class="header">
+        <h1>Discord Bot Adı</h1>
+        <p>Çay var içersen, ben var seversen!</p>
+        <button onclick="inviteBot()">Sunucuya Davet Et</button>
     </header>
 
-    <main>
-        <section id="about">
-            <h2>Hakkında</h2>
-            <p>Bu Discord botu, çeşitli eğlence ve ekonomi komutları sunar. Bot, Discord sunucunuza katıldığında çeşitli mesajlar gönderir ve kullanıcılarla etkileşimde bulunur.</p>
-        </section>
+    <section class="section about">
+        <h2>Hakkında</h2>
+        <p>Bu Discord botu, çeşitli eğlence ve ekonomi komutları sunar. Bot, Discord sunucunuza katıldığında çeşitli mesajlar gönderir ve kullanıcılarla etkileşimde bulunur.</p>
+    </section>
 
-        <section id="features">
-            <h2>Özellikler</h2>
-            <ul>
-                <li>Kullanıcıların bakiyelerini yönetir ve çeşitli oyunlar oynamalarına olanak tanır.</li>
-                <li>Döviz kuru bilgisini sağlar.</li>
-                <li>Bilmece ve quiz soruları sorar.</li>
-                <li>Zar ve yazı-tura oyunları oynatır.</li>
-                <li>Adam asmaca ve rulet oyunları sunar.</li>
-                <li>Takım oluşturma, yatırım yapma ve maç yapma özellikleri sağlar.</li>
-                <li>Selamlama ve basit sohbet yanıtları içerir.</li>
-            </ul>
-        </section>
+    <section class="section features">
+        <h2>Özellikler</h2>
+        <div id="features-container" class="features">
+            <div class="feature">
+                <h3>Özellik 1</h3>
+                <p>Kullanıcıların bakiyelerini yönetir ve çeşitli oyunlar oynamalarına olanak tanır.</p>
+            </div>
+            <div class="feature">
+                <h3>Özellik 2</h3>
+                <p>Döviz kuru bilgisini sağlar.</p>
+            </div>
+            <div class="feature">
+                <h3>Özellik 3</h3>
+                <p>Bilmece ve quiz soruları sorar.</p>
+            </div>
+            <div class="feature">
+                <h3>Özellik 4</h3>
+                <p>Zar ve yazı-tura oyunları oynatır.</p>
+            </div>
+            <div class="feature">
+                <h3>Özellik 5</h3>
+                <p>Adam asmaca ve rulet oyunları sunar.</p>
+            </div>
+            <div class="feature">
+                <h3>Özellik 6</h3>
+                <p>Takım oluşturma, yatırım yapma ve maç yapma özellikleri sağlar.</p>
+            </div>
+            <div class="feature">
+                <h3>Özellik 7</h3>
+                <p>Selamlama ve basit sohbet yanıtları içerir.</p>
+            </div>
+        </div>
+    </section>
 
-        <section id="commands">
-            <h2>Komutlar</h2>
-            <h3>Genel Komutlar</h3>
-            <ul>
-                <li>!komutlar: Tüm komutları listeler</li>
-                <li>selam: Bot ile selamlaşır</li>
-                <li>dolar: 1 doların kaç TL olduğunu gösterir</li>
-                <li>!bakiye: Bakiyenizi gösterir</li>
-                <li>!btransfer <kullanıcı> <miktar>: Belirtilen kullanıcıya belirtilen miktarda sikke gönderir</li>
-                <li>!bilmece: Rastgele bir bilmece sorar</li>
-                <li>!quiz: Rastgele bir quiz sorusu sorar</li>
-                <li>!zar <bahis> <tahmin>: Zar oyunu oynar</li>
-                <li>!yazitura <bahis> <seçim>: Yazı-tura oyunu oynar</li>
-                <li>!asmaca: Adam asmaca oyunu oynar</li>
-                <li>!rulet <bahis>: Rulet oyunu oynar</li>
-                <li>!siralama: En zengin 20 kişiyi sıralar</li>
-            </ul>
-            <h3>Takım Oyunu Komutları</h3>
-            <ul>
-                <li>!takimolustur <takim_adi> <yatirim>: Yeni bir takım oluşturur</li>
-                <li>!takimyatirim <yatirim>: Takıma yatırım yapar</li>
-                <li>!macyap <bahis>: Takımınızla maç yapar</li>
-                <li>!takimim: Takımınızı gösterir</li>
-            </ul>
-            <h3>Takım Oyunu Kuralları</h3>
-            
-            <p> Her kullanıcı yalnızca bir takıma sahip olabilir </p>
-            <p> Takımınızın kasasına yatırım yaparak takımınızı güçlendirebilirsiniz</p>
-            <p> Takımınızla maç yaparak diğer takımlardan sikke kazanabilirsiniz aynı zamanda bahis miktarı*2 de kasanıza gelir</p>
-            <p> Maç yaparken kasada kimin daha çok sikkesi varsa o kazanır.</p>
+    <section class="section commands">
+        <h2 class="commands-title">Genel Komutlar</h2>
+        <div class="commands-container">
+            <div class="command">
+                <p class="console-command">!komutlar</p>
+                <p>Tüm komutları listeler.</p>
+            </div>
+            <div class="command">
+                <p class="console-command">selam</p>
+                <p>Bot ile selamlaşır.</p>
+            </div>
+            <div class="command">
+                <p class="console-command">dolar</p>
+                <p>1 doların kaç TL olduğunu gösterir.</p>
+            </div>
+            <div class="command">
+                <p class="console-command">!bakiye</p>
+                <p>Bakiyenizi gösterir.</p>
+            </div>
+            <div class="command">
+                <p class="console-command">!btransfer &lt;@kullanıcı&gt; &lt;tutar&gt; </p>
+                <p>Belirtilen kullanıcıya belirtilen miktarda sikke gönderir.</p>
+            </div>
+            <div class="command">
+                <p class="console-command">!bilmece</p>
+                <p>Rastgele bir bilmece sorar.</p>
+            </div>
+            <div class="command">
+                <p class="console-command">!quiz</p>
+                <p>Rastgele bir quiz sorusu sorar.</p>
+            </div>
+            <div class="command">
+                <p class="console-command">!zar &lt;bahis&gt;</p>
+                <p>Zar oyunu oynar.</p>
+            </div>
+            <div class="command">
+                <p class="console-command">!yazitura &lt;bahis&gt; &lt;yazı/tura&gt;</p>
+                <p>Yazı-tura oyunu oynar.</p>
+            </div>
+            <div class="command">
+                <p class="console-command">!asmaca</p>
+                <p>Adam asmaca oyunu oynar.</p>
+            </div>
+            <div class="command">
+                <p class="console-command">!rulet &lt;bahis&gt;</p>
+                <p>Rulet oyunu oynar.</p>
+            </div>
+            <div class="command">
+                <p class="console-command">!siralama</p>
+                <p>En zengin 20 kişiyi sıralar. Tüm Sunucular</p>
+            </div>
+        </div>
 
-            <h3>Eğlence Komutları</h3>
-            <ul>
-                <li>sa: Aleyküm selam!</li>
-                <li>selam: Merhaba!</li>
-                <li>nasılsın: Botun nasıl olduğunu sorar</li>
-                <li>hoş geldin: Hoş geldin mesajı verir</li>
-                <li>görüşürüz: Görüşürüz mesajı verir</li>
-                <li>naber: Nasıl olduğunu sorar</li>
-                <li>iyi: İyi olduğunu belirtir</li>
-                <li>kötü: Kötü olduğunu belirtir</li>
-                <li>teşekkürler: Teşekkür eder</li>
-                <li>iyi geceler: İyi geceler mesajı verir</li>
-                <li>günaydın: Günaydın mesajı verir</li>
-                <li>iyi akşamlar: İyi akşamlar mesajı verir</li>
-                <li>iyi günler: İyi günler mesajı verir</li>
-                <li>çay: Çay getirir</li>
-                <li>kahve: Kahve getirir (belki de getirmez)</li>
-                <li>çaycı: Çay mı istediğini sorar</li>
-            </ul>
-            <h3>Müzik Komutları</h3>
-            <ul>
-                <li>!cal <şarkı adı veya URL>: Belirtilen şarkıyı çalar</li>
-                <li>!dur: Müziği durdurur</li>
-                <li>!devam: Müziği devam ettirir</li>
-                <li>!siradakiler: Sıradaki şarkıları gösterir</li>
-                <li>!gec: Sıradaki şarkıya geçer</li>
-                <li>!cik: Ses kanalından ayrılır</li>
-            </ul>
-        </section>
+        <h2 class="commands-title">Takım Oyunu Komutları</h2>
+        <div class="commands-container">
+            <div class="command">
+                <p class="console-command">!takimolustur &lt;Takım Adı&gt;</p>
+                <p>Yeni bir takım oluşturur.</p>
+            </div>
+            <div class="command">
+                <p class="console-command">!takimyatirim &lt;Yatırım Tutarı&gt;</p>
+                <p>Takıma yatırım yapar.</p>
+            </div>
+            <div class="command">
+                <p class="console-command">!macyap &lt;bahis&gt;</p>
+                <p>Takımınızla maç yapar.</p>
+            </div>
+            <div class="command">
+                <p class="console-command">!takimim</p>
+                <p>Takımınızı gösterir.</p>
+            </div>
+        </div>
 
-        <section id="invite">
-            <h2>Davet Et</h2>
-            <p>Çaycı botunu sunucunuza davet etmek için <a href="https://discord.com/oauth2/authorize?client_id=1239246553860800614&permissions=3213312&scope=bot" target="_blank">buraya tıklayın</a>.</p>
-        </section>
+        <h2 class="commands-title">Takım Oyunu Kuralları</h2>
+        <div class="commands-container">
+            <div class="command">
+                <p>Her kullanıcı yalnızca bir takıma sahip olabilir.</p>
+                <p>Takımınızın kasasına yatırım yaparak takımınızı güçlendirebilirsiniz.</p>
+                <p>Takımınızla maç yaparak diğer takımlardan sikke kazanabilirsiniz, aynı zamanda bahis miktarı*2 de kasanıza gelir.</p>
+                <p>Maç yaparken kasada kimin daha çok sikkesi varsa o kazanır.</p>
+            </div>
+        </div>
 
-        <section id="contact">
-            <h2>İletişim</h2>
-            <p>Herhangi bir sorunuz veya öneriniz varsa, bize <a href="mailto:emre@emreylmz.com">emre@emreylmz.com</a> adresinden ulaşabilirsiniz.</p>
-        </section>
-    </main>
+        <h2 class="commands-title">Eğlence Komutları</h2>
+        <div class="commands-container">
+            <div class="command">
+                <p class="console-command">sa</p>
+                <p>Aleyküm selam!</p>
+            </div>
+            <div class="command">
+                <p class="console-command">selam</p>
+                <p>Merhaba!</p>
+            </div>
+            <div class="command">
+                <p class="console-command">nasılsın</p>
+                <p>Botun nasıl olduğunu sorar.</p>
+            </div>
+            <div class="command">
+                <p class="console-command">hoş geldin</p>
+                <p>Hoş geldin mesajı verir.</p>
+            </div>
+            <div class="command">
+                <p class="console-command">görüşürüz</p>
+                <p>Görüşürüz mesajı verir.</p>
+            </div>
+            <div class="command">
+                <p class="console-command">naber</p>
+                <p>Nasıl olduğunu sorar.</p>
+            </div>
+            <div class="command">
+                <p class="console-command">iyi</p>
+                <p>İyi olduğunu belirtir.</p>
+            </div>
+            <div class="command">
+                <p class="console-command">kötü</p>
+                <p>Kötü olduğunu belirtir.</p>
+            </div>
+            <div class="command">
+                <p class="console-command">teşekkürler</p>
+                <p>Teşekkür eder.</p>
+            </div>
+            <div class="command">
+                <p class="console-command">iyi geceler</p>
+                <p>İyi geceler mesajı verir.</p>
+            </div>
+            <div class="command">
+                <p class="console-command">günaydın</p>
+                <p>Günaydın mesajı verir.</p>
+            </div>
+            <div class="command">
+                <p class="console-command">iyi akşamlar</p>
+                <p>İyi akşamlar mesajı verir.</p>
+            </div>
+            <div class="command">
+                <p class="console-command">iyi günler</p>
+                <p>İyi günler mesajı verir.</p>
+            </div>
+            <div class="command">
+                <p class="console-command">çay</p>
+                <p>Çay getirir.</p>
+            </div>
+            <div class="command">
+                <p class="console-command">kahve</p>
+                <p>Kahve getirir (belki de getirmez).</p>
+            </div>
+            <div class="command">
+                <p class="console-command">çaycı</p>
+                <p>Çay mı istediğini sorar.</p>
+            </div>
+        </div>
 
-    <footer>
-        <p>&copy; 2024 Çaycı Bot. Tüm hakları saklıdır.</p>
+        <h2 class="commands-title">Müzik Komutları</h2>
+        <div class="commands-container">
+            <div class="command">
+                <p class="console-command">!cal &lt;şarkı adı veya URL&gt;</p>
+                <p>Belirtilen şarkıyı çalar.</p>
+            </div>
+            <div class="command">
+                <p class="console-command">!dur</p>
+                <p>Müziği durdurur.</p>
+            </div>
+            <div class="command">
+                <p class="console-command">!devam</p>
+                <p>Müziği devam ettirir.</p>
+            </div>
+            <div class="command">
+                <p class="console-command">!siradakiler</p>
+                <p>Sıradaki şarkıları gösterir.</p>
+            </div>
+            <div class="command">
+                <p class="console-command">!gec</p>
+                <p>Sıradaki şarkıya geçer.</p>
+            </div>
+            <div class="command">
+                <p class="console-command">!cik</p>
+                <p>Ses kanalından ayrılır.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section statistics center">
+        <h2>İstatistikler</h2>
+        <p>Sunucu sayısı: 100</p>
+        <p>Kullanıcı sayısı: 5000</p>
+    </section>
+
+    <section class="section feedback center">
+        <h2>Geri Bildirim ve Destek</h2>
+        <p>Destek sunucusu: <a href="https://discord.gg/dSVRs26v5t" style="color: #bb86fc;">Çaycı Bot</a></p>
+        <p>E-Posta: <a href="mailto:emre@emreylmz.com" style="color: #bb86fc;">emre@emreylmz.com</a></p>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Discord Bot. Tüm hakları saklıdır.</p>
     </footer>
 
-    <script src="scripts.js"></script>
+    <script>
+        function inviteBot() {
+            window.open('https://discord.com/oauth2/authorize?client_id=1239246553860800614&permissions=3213312&scope=bot', '_blank');
+        }
+    </script>
 </body>
 </html>
